@@ -1,4 +1,4 @@
-package com.irarrazabal.sublime.entities;
+package com.irarrazabal.sublime.model;
 
 public enum Role {
     ADMIN,

@@ -1,4 +1,4 @@
-package com.irarrazabal.sublime.entities;
+package com.irarrazabal.sublime.model;
 
 
 import jakarta.persistence.*;
@@ -7,7 +7,8 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "users")
-@Getter @Setter
+@Getter
+@Setter
 public class User {
 
     @Id
