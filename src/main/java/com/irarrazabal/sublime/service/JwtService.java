@@ -1,4 +1,4 @@
-package com.irarrazabal.sublime.security;
+package com.irarrazabal.sublime.service;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;

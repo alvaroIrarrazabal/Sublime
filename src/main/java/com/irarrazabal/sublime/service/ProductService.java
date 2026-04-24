@@ -2,6 +2,7 @@ package com.irarrazabal.sublime.service;
 
 import com.irarrazabal.sublime.DTO.CreateProductRequest;
 import com.irarrazabal.sublime.DTO.ProductResponse;
+import com.irarrazabal.sublime.exceptions.ProductNotFoundException;
 import com.irarrazabal.sublime.model.CostItem;
 import com.irarrazabal.sublime.model.Product;
 import com.irarrazabal.sublime.repository.ProductRepository;
@@ -39,6 +40,7 @@ public class ProductService {
         double suggestedPrice = calculateSuggestedPrice(totalCost,product.getMargin());
 
         product.setPriceSuggested(suggestedPrice);
+        product.setStock(request.getStock());
         productRepository.save(product);
 
         return mapToResponse(product);
@@ -58,7 +60,7 @@ public class ProductService {
     public ProductResponse getById(Long id){
 
         Product product = productRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Producto no encontrado"));
+                .orElseThrow(() -> new ProductNotFoundException(id));
         return mapToResponse(product);
     }
 
@@ -75,6 +77,7 @@ private double calculateTotalCost(Product product){
 
 
 private double calculateSuggestedPrice(double totalCost, double margin){
+
         return totalCost / (1 - margin);
 }
 
@@ -86,7 +89,8 @@ private ProductResponse mapToResponse(Product product){
         return  new ProductResponse(
                 product.getName(),
                 totalCost,
-                product.getPriceSuggested()
+                product.getPriceSuggested(),
+                product.getStock()
         );
 }
 

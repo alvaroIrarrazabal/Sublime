@@ -10,12 +10,14 @@ public class ProductResponse {
     private String name;
     private double totalCost;
     private double suggestedPrice;
+    private int stock;
 
     public ProductResponse() {}
 
-    public ProductResponse(String name, double totalCost, double suggestedPrice) {
+    public ProductResponse(String name, double totalCost, double suggestedPrice, int stock) {
         this.name = name;
         this.totalCost = totalCost;
         this.suggestedPrice = suggestedPrice;
+        this.stock = stock;
     }
 }

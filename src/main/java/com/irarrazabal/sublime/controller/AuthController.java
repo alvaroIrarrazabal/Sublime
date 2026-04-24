@@ -5,7 +5,7 @@ import com.irarrazabal.sublime.DTO.AuthResponse;
 import com.irarrazabal.sublime.DTO.LoginRequest;
 import com.irarrazabal.sublime.model.User;
 import com.irarrazabal.sublime.repository.UserRepository;
-import com.irarrazabal.sublime.security.JwtService;
+import com.irarrazabal.sublime.service.JwtService;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

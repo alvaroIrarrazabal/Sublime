@@ -9,6 +9,7 @@ public class CreateProductRequest {
 
     private String name;
     private double margin;
+    private int stock;
     private List<CostItemRequest> cost;
 
 }

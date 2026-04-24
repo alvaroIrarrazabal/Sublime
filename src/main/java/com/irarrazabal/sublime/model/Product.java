@@ -22,6 +22,8 @@ public class Product {
 
     private double priceSuggested;
 
+    private int stock;
+
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     private List<CostItem> cost;
 
